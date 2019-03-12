@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Park IT </title>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel = "stylesheet" href="parkIt.css">
+        <script>
+            var map;
+            function initMap() {
+              map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 8
+              });
+            }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHqKLvwhqQmgKYU81EX8AnrMB659Tna0E&callback=initMap" type="text/javascript" ></script>
+        <script type="text/javascript" src="parkIt.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        </head>
+    <body onLoad="init()">
+        <div id ="navbar">
+            <button id="park" onclick="setParkingLocation()">Park</button>
+            Park It
+            <button id = "retrieve" onclick="getParkingLocation()">Find</button>
+        </div>
+        <div id="container">
+            <div id="instructions">
+                <p>Click to park</p>
+                <p>CLlick Find</p>
+                <p style="text-align: center"><button id="gotIt" onclick="setCss('instructions','display','none')">Got it</button></p>
+                <a href="reportView.html">click for reort</a>
+            </div>
+            <div id= "map"></div>
+            <div id= "directions"></div>
+        </div>
+    </body>
+
+</html>
